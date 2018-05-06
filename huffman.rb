@@ -33,27 +33,26 @@ class Huffman
   def decode(bits)
     root = @nodes[0]
     @nodes = []
-    tree_list(root)
-
+    decode_tree(root)
+    found = false
     message = ''
-    exists = false
-    curr_bits = ''
+    search_bits = ''
     bit_string = bits.chomp
     bit_string.split('').each do |bits|
-      curr_bits += bits
+      search_bits += bits
       @nodes.each do |node|
-        curr_node_codeword = node.data.code
-        if curr_node_codeword == curr_bits
+        code = node.data.code
+        if code == search_bits
           message += node.data.symbol
-          curr_bits = ''
-          exists = true
+          search_bits = ''
+          found = true
           break
         else
-          exists = false
+          found = false
         end
       end
     end
-    if exists then print "Word = #{message}"
+    if found then print "Word = #{message}"
     else print 'No message for those bits'
     end
   end
@@ -127,7 +126,7 @@ class Huffman
     @nodes.sort!{|n1,n2| n1.data.probability <=> n2.data.probability}
   end
 
-  def tree_list(root)
+  def decode_tree(root)
     if(root.nil?)
       #error
     else
@@ -139,13 +138,13 @@ class Huffman
           if(children[i].class==HNode)
             #of class node, needs to be of type tree
           else
-            tree_list(children[i])
+            decode_tree(children[i])
           end
-
         end
       end
     end
   end
+
   def average_code_length
     sum = 0
     amount = @base_nodes.size
@@ -154,6 +153,7 @@ class Huffman
     end
     puts "average code length: #{sum}"
   end
+
   def create_code(root)
     if(root.nil?)
       #error
