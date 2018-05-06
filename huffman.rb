@@ -46,7 +46,6 @@ class Huffman
           message += node.data.symbol
           search_bits = ''
           found = true
-          break
         else
           found = false
         end
