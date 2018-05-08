@@ -1,7 +1,7 @@
 class Tree
 
   attr_accessor :data, :children
-  def initialize(data, child_nodes=nil, parent=nil)
+  def initialize(data, child_nodes=nil)
     @data = data
     @children = child_nodes.equal?(nil) ? [] : child_nodes
   end

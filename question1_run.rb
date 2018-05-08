@@ -1,6 +1,6 @@
-require_relative 'tree'
-require_relative 'huffman'
-require_relative 'h_node'
+require_relative 'tree.rb'
+require_relative 'huffman.rb'
+require_relative 'h_node.rb'
 
 class Question1Run
 
@@ -32,7 +32,7 @@ class Question1Run
   # end
   # puts probabilities
   probabilities = [0.1, 0.15, 0.2, 0.25, 0.1, 0.2]
-  d = 2
+  d = 3
   symbols = []
   for i in 0..probabilities.size-1
     symbols.push('x'+i.to_s)

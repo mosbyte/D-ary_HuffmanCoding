@@ -34,6 +34,7 @@ class Huffman
     root = @nodes[0]
     @nodes = []
     decode_tree(root)
+
     found = false
     message = ''
     search_bits = ''
@@ -46,6 +47,7 @@ class Huffman
           message += node.data.symbol
           search_bits = ''
           found = true
+          break
         else
           found = false
         end
