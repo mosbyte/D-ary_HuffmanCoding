@@ -1,6 +1,6 @@
-require_relative 'tree.rb'
-require_relative 'huffman.rb'
-require_relative 'h_node.rb'
+require_relative 'tree'
+require_relative 'huffman'
+require_relative 'h_node'
 
 class Question1Run
 
@@ -31,8 +31,16 @@ class Question1Run
   #   probabilities << array[i].to_f
   # end
   # puts probabilities
-  probabilities = [0.1, 0.15, 0.2, 0.25, 0.1, 0.2]
-  d = 3
+
+
+  probabilities = [0.1, 0.1, 0.25, 0.25, 0.1, 0.2]
+  # probabilities = [0.2857,0.2391,0.1429,0.1905,0.0476,0.0952]
+  d = 4
+  num = ((probabilities.size-1).to_f / (d-1)).to_f
+
+  if(!(num%1==0))
+    probabilities.push(0)
+  end
   symbols = []
   for i in 0..probabilities.size-1
     symbols.push('x'+i.to_s)
@@ -43,8 +51,10 @@ class Question1Run
   puts 'Huffman code for each probability:'
   huffman.print_huffman
   huffman.average_code_length
-# puts 'Input is 1000111100101'
-# huffman.decode("1000111100101")
-  puts 'Input is 00010201121011'
-  huffman.decode("00010201121011")
+  huffman.entropy(d)
+
+  # probabilities = [0.1, 0.1, 0.25, 0.25, 0.1, 0.2]
+  # puts 'Input is 0001101110110011111 and base is 2'
+  # huffman.decode("000110111011001111110101010")
+
 end
