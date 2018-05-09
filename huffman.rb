@@ -25,7 +25,21 @@ class Huffman
     end
     create_code(@nodes[0])
   end
+  def encode_sequence(string)
+    sequence = string.scan /\w/
+    huffman_encoded = ''
+    sequence.each do |x|
+      @base_nodes.each do |z|
+        if x == z.data.symbol
+          huffman_encoded += z.data.code.to_s
+        end
+      end
+    end
+    puts "Genetic Sequence = #{string}"
+    puts "Sequence Encoded =  #{huffman_encoded}"
+    return huffman_encoded
 
+  end
   def decode(bits)
     root = @nodes[0]
     @nodes = []
@@ -50,7 +64,7 @@ class Huffman
       end
     end
     if found
-      puts "Word Decoded = #{message}"
+      puts "Decoded Successfully\nSequence Decoded = #{message}"
     else
       puts 'No message for those bits'
     end
