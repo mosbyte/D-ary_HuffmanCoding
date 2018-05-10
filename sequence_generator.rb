@@ -35,10 +35,10 @@ class SequenceGenerator
     emp3 =  (x3.to_f/n).round(4).to_f
     emp4 =  (x4.to_f/n).round(4).to_f
 
-    puts "Empirical frequency vs pmf of x: #{emp1}  vs  #{px1.round(4).to_f} ...variance between them is #{(emp1 - (px1).round(4).to_f)}"
-    puts "Empirical frequency vs pmf of x: #{emp2}  vs  #{(px2-px1).round(4).to_f} ...variance between them is #{(emp1 - (px2-px1)).round(4).to_f}"
-    puts "Empirical frequency vs pmf of x: #{emp3}  vs  #{(px3-px1.round(4).to_f)} ...variance between them is #{(emp1 - (px3-px1)).round(4).to_f}"
-    puts "Empirical frequency vs pmf of x: #{emp4}  vs  #{(px4-px3.round(4).to_f)} ...variance between them is #{(emp1 - (px4-px3)).round(4).to_f}"
+    puts "Empirical frequency vs pmf of x: #{emp1}  vs  #{px1.round(4)} ...variance between them is #{(emp1 - (px1)).round(4)}"
+    puts "Empirical frequency vs pmf of x: #{emp2}  vs  #{(px2-px1).round(4)} ...variance between them is #{(emp1 - (px2-px1)).round(4)}"
+    puts "Empirical frequency vs pmf of x: #{emp3}  vs  #{(px3-px1).round(4)} ...variance between them is #{(emp1 - (px3-px1)).round(4)}"
+    puts "Empirical frequency vs pmf of x: #{emp4}  vs  #{(px4-px3).round(4)} ...variance between them is #{(emp1 - (px4-px3)).round(4)}"
 
     puts"\n"
     return str

@@ -21,8 +21,7 @@ class Test
   huffman.print_huffman
   huffman.average_code_length
   huffman.entropy(d)
-  puts 'Input is 0001101110110011111 and base is 2'
-  huffman.decode(sequence)
+  puts ''
+  puts "Input is 0001101110110011111 and base is 2\nDecoded message: #{huffman.decode(sequence)}"
 
-  puts 3.0%1!=0
 end
