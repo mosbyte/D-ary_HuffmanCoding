@@ -9,7 +9,7 @@ class UseHuffman
     puts 'Enter the number D the ary value for this huffman code either D=2 D=3 or D=4'
     d = gets.chomp.to_i
     if d>=5
-      run
+      run_with_input
     end
     puts "enter probabilities individually stop by hitting enter twice:\nX0:"
     sum=0
@@ -34,7 +34,10 @@ class UseHuffman
     for i in 0..array.size-1
       probabilities << array[i].to_f
     end
-
+    if probabilities.size < 2
+      puts 'please enter more probabilities'
+      run_with_input
+    end
     num = ((probabilities.size-1).to_f / (d-1)).to_f
 
     if num%1!=0
@@ -102,8 +105,5 @@ class UseHuffman
       f.write(decoded_sequence)
       f.close
     end
-
-
-
   end
 end

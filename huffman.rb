@@ -34,8 +34,9 @@ class Huffman
         end
       end
     end
-    puts "Genetic Sequence = #{string}"
-    puts "Sequence Encoded =  #{huffman_encoded}"
+    # puts "Genetic Sequence = #{string}"
+    # puts "Sequence Encoded =  #{huffman_encoded}"
+    puts 'Encoding stored in file in same directory'
     return huffman_encoded
 
   end
@@ -63,7 +64,7 @@ class Huffman
       end
     end
     if found
-      puts "Decoded Successfully\nSequence Decoded = #{message}"
+      puts 'Decoded Successfully and stored in file in same directory'
       return message
     else
       puts 'No message for those bits'
@@ -72,7 +73,7 @@ class Huffman
 
   def create_tree(num_of_children)
     root_probability=0
-    root_symbol = ""
+    root_symbol = ''
     for i in 0..num_of_children-1
       @nodes[i].data.code = i
       #puts @nodes[i].data.symbol.to_s
