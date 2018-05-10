@@ -3,7 +3,7 @@ require_relative 'sequence_generator'
 class Q2B
 
   puts ''
-  puts "Please specify your value for N, the length of the genetic sequence e.g 10000\n\nBeware...Genetic sequences with over 100000 characters may take a few minutes"
+  puts "Please specify your value for N, the length of the genetic sequence e.g 10000\n"
   puts 'Genetic sequence length:'
   n = gets.chomp.to_i
   puts ''
@@ -14,8 +14,8 @@ class Q2B
     puts '*Can not be encoded using that D-ary value, Please enter 2,3 or 4*'
     d = gets.chomp.to_i
   end
-  if n>100000
-    puts 'This may take some time...'
+  if n>1000000
+    puts 'This may a few minutes...'
   end
 
   probabilities = [0.2141, 0.2648, 0.3207, 0.2004]

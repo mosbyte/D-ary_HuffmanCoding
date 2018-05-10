@@ -30,7 +30,7 @@ class Huffman
     sequence.each do |x|
       @base_nodes.each do |z|
         if x == z.data.symbol
-          huffman_encoded += z.data.code.to_s
+          huffman_encoded.concat(z.data.code.to_s)
         end
       end
     end
@@ -50,11 +50,11 @@ class Huffman
     curr_bits = ''
     bit_string = bits.chomp
     bit_string.split('').each do |bits|
-      curr_bits += bits
+      curr_bits.concat(bits)
       @nodes.each do |node|
         curr_node_codeword = node.data.code
         if curr_node_codeword == curr_bits
-          message += node.data.symbol
+          message.concat(node.data.symbol)
           curr_bits = ''
           found = true
           break
