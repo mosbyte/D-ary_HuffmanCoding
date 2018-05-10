@@ -41,7 +41,6 @@ class SequenceGenerator
     puts "Empirical frequency vs pmf of x: #{emp4}  vs  #{px4-px3} ...variance between them is #{emp1 - (px4-px3)}"
 
     puts"\n"
-    #puts str
     return str
   end
 end

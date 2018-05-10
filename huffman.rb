@@ -7,7 +7,8 @@ class Huffman
     @base_nodes = []
   end
 
-  def setup_nodes(probs, symbols)
+  def encode(probs, symbols,d)
+    #setup nodes
     for i in 0..probs.size-1
       node_probability = probs[i]
       node_symbol = symbols[i]
@@ -16,9 +17,7 @@ class Huffman
       @nodes.push(root)
       @base_nodes.push(root)
     end
-  end
-
-  def encode(d)
+    #create codewords
     while @nodes.size > 1
       sort_nodes_array
       create_tree(d)
@@ -65,6 +64,7 @@ class Huffman
     end
     if found
       puts "Decoded Successfully\nSequence Decoded = #{message}"
+      return message
     else
       puts 'No message for those bits'
     end

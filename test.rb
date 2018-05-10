@@ -8,7 +8,7 @@ class Test
   d = 2
   num = ((probabilities.size-1).to_f / (d-1)).to_f
 
-  if(!(num%1==0))
+  if num%1!=0
     probabilities.push(0)
   end
   for i in 0..probabilities.size-1
@@ -16,8 +16,7 @@ class Test
   end
 
   huffman = Huffman.new
-  huffman.setup_nodes(probabilities,symbols)
-  huffman.encode(d)
+  huffman.encode(probabilities,symbols,d)
   puts "\nHuffman code for each probability:"
   huffman.print_huffman
   huffman.average_code_length

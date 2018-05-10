@@ -45,8 +45,7 @@ class UseHuffman
       symbols.push('x'+i.to_s)
     end
     huffman = Huffman.new
-    huffman.setup_nodes(probabilities,symbols)
-    huffman.encode(d)
+    huffman.encode(probabilities,symbols,d)
     puts "\nHuffman code for each probability:"
     huffman.print_huffman
     huffman.average_code_length
@@ -69,16 +68,42 @@ class UseHuffman
       symbols.push("D")
     end
     huffman = Huffman.new
-    huffman.setup_nodes(probabilities,symbols)
-    huffman.encode(d)
+    huffman.encode(probabilities,symbols,d)
     puts "\nHuffman code for each probability:"
     huffman.print_huffman
     huffman.average_code_length
     huffman.entropy(d)
-    puts ""
-    str = huffman.encode_sequence(sequence)
-    huffman.decode(str)
+    puts ''
+    encoded_sequence = huffman.encode_sequence(sequence)
+    decoded_sequence = huffman.decode(encoded_sequence)
+
+    if d==2
+      f = File.new('encoded_sequence_D2.txt', 'w')
+      f.write(encoded_sequence)
+      f.close
+
+      f = File.new('decoded_sequence_D2.txt','w')
+      f.write(decoded_sequence)
+      f.close
+    elsif d==3
+      f = File.new('encoded_sequence_D3.txt', 'w')
+      f.write(encoded_sequence)
+      f.close
+
+      f = File.new('decoded_sequence_D3.txt','w')
+      f.write(decoded_sequence)
+      f.close
+    elsif d==4
+      f = File.new('encoded_sequence_D4.txt', 'w')
+      f.write(encoded_sequence)
+      f.close
+
+      f = File.new('decoded_sequence_D4.txt','w')
+      f.write(decoded_sequence)
+      f.close
+    end
+
+
 
   end
-
 end

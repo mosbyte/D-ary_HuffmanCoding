@@ -2,10 +2,12 @@ require_relative 'use_huffman'
 require_relative 'sequence_generator'
 class Q2B
 
+
   n = 10000
   probabilities = [0.2141, 0.2648, 0.3207, 0.2004]
-  symbols = ["A","T","C","G"]
+  symbols = %w(A T C G)
   q2 = SequenceGenerator.new
+  puts "\nPlease wait for encoding...\n"
   puts "\n***Emperical frequency from the generation of the sequence***\n\n"
   sequence  = q2.function(n,probabilities,symbols)
 
@@ -18,7 +20,5 @@ class Q2B
 
   puts "\n*** For D=3 ***\n"
   huffman.huffman(probabilities,symbols,3,sequence)
-
-
 
 end
