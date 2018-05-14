@@ -1,4 +1,5 @@
-A Ruby implementation of D-ary Huffman Encoding and Decoding. This program is used to generate genetic sequences and encode them, the genetic sequence can also be decoded.
+A Ruby implementation of D-ary Huffman Encoding and Decoding. This program is used to generate genetic 
+sequences and encode them, the genetic sequence can also be decoded.
 
 **********************************************
 *****RUBY MUST BE INSTALLED ON THE MACHINE****
